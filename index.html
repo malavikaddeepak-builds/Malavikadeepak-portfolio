@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malavika Deepak — Business Development | Content Creator | MBA Aspirant</title>
+  <meta name="description" content="Economics graduate turned Business Development professional. Building BDE Workspace, writing about growth and business, and working towards a top MBA."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #F6F1E9;
+      --warm-white: #FBF8F3;
+      --sand:       #E4D9C8;
+      --tan:        #C8AD8F;
+      --brown:      #9A7352;
+      --deep-brown: #5C3D1E;
+      --dark:       #231209;
+      --text:       #3A2415;
+      --muted:      #7A6050;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 1.4rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 500;
+      background: linear-gradient(to bottom, var(--cream) 55%, transparent);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--brown); }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      align-items: center;
+      padding: 9rem 4rem 5rem;
+      gap: 3rem;
+    }
+
+    .hero-text { animation: fadeUp 0.9s ease both; }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .eyebrow-line { width: 40px; height: 1px; background: var(--tan); }
+
+    .eyebrow-text {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brown);
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.8rem, 7vw, 6.5rem);
+      font-weight: 300;
+      line-height: 1.02;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-name .italic { font-style: italic; color: var(--brown); }
+
+    .hero-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1.8rem 0 2rem;
+    }
+
+    .role-pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--tan);
+      border-radius: 2rem;
+      color: var(--muted);
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 480px;
+      margin-bottom: 2.8rem;
+    }
+
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-dark {
+      background: var(--dark);
+      color: var(--cream);
+      padding: 0.9rem 2.2rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      transition: background 0.3s, transform 0.25s;
+    }
+    .btn-dark:hover { background: var(--deep-brown); transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1px solid var(--tan);
+      color: var(--text);
+      padding: 0.9rem 2.2rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover { border-color: var(--brown); color: var(--brown); transform: translateY(-2px); }
+
+    .hero-visual {
+      position: relative;
+      animation: fadeIn 1.1s ease both 0.25s;
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-wrap { position: relative; width: 340px; }
+
+    .photo-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 1.5rem 1.5rem 6rem 1.5rem;
+      display: block;
+      filter: sepia(6%) contrast(1.02);
+    }
+
+    .photo-frame {
+      position: absolute;
+      top: -14px; left: -14px; right: 14px; bottom: -14px;
+      border: 1px solid var(--tan);
+      border-radius: 2rem 2rem 7rem 2rem;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .float-card {
+      position: absolute;
+      bottom: 2.5rem;
+      left: -5rem;
+      background: var(--warm-white);
+      border: 1px solid var(--sand);
+      border-radius: 1.2rem;
+      padding: 1.1rem 1.5rem;
+      box-shadow: 0 12px 40px rgba(35,18,9,0.1);
+      min-width: 200px;
+    }
+
+    .float-card-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-bottom: 0.4rem;
+    }
+
+    .float-card-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--dark);
+      line-height: 1.3;
+    }
+
+    .about {
+      background: var(--warm-white);
+      padding: 7rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-left { position: sticky; top: 8rem; }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brown);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      width: 30px; height: 1px;
+      background: var(--tan);
+    }
+
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--dark);
+    }
+
+    .section-heading em { font-style: italic; color: var(--brown); }
+
+    .about-body p {
+      font-size: 0.97rem;
+      line-height: 1.95;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .about-body p strong { color: var(--text); font-weight: 500; }
+
+    .achievements {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--sand);
+    }
+
+    .achievement-item { display: flex; align-items: flex-start; gap: 1rem; }
+
+    .achievement-icon {
+      width: 36px; height: 36px;
+      border-radius: 0.6rem;
+      background: var(--sand);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .achievement-text { font-size: 0.88rem; line-height: 1.6; color: var(--muted); }
+    .achievement-text strong { color: var(--text); display: block; font-weight: 500; margin-bottom: 0.1rem; }
+
+    .work { padding: 7rem 4rem; }
+
+    .work-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3.5rem;
+    }
+
+    .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+    .work-card {
+      background: var(--warm-white);
+      border: 1px solid var(--sand);
+      border-radius: 1.8rem;
+      padding: 2.2rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .work-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(35,18,9,0.1); }
+
+    .card-icon {
+      width: 52px; height: 52px;
+      border-radius: 1rem;
+      background: var(--sand);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .card-tag { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brown); }
+
+    .work-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+
+    .work-card p { font-size: 0.87rem; line-height: 1.75; color: var(--muted); flex: 1; }
+    .card-arrow { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brown); }
+
+    .platforms { background: var(--dark); padding: 7rem 4rem; }
+
+    .platforms-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+    }
+
+    .platforms .section-eyebrow { color: var(--tan); }
+    .platforms .section-eyebrow::before { background: var(--brown); }
+    .platforms .section-heading { color: var(--cream); }
+    .platforms .section-heading em { color: var(--tan); }
+
+    .platforms-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+
+    .platform-card {
+      border: 1px solid rgba(200,173,143,0.18);
+      border-radius: 1.5rem;
+      padding: 2rem 1.8rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+    }
+
+    .platform-card:hover { border-color: var(--tan); background: rgba(200,173,143,0.06); transform: translateY(-4px); }
+
+    .platform-emoji { font-size: 2rem; display: block; margin-bottom: 1.2rem; }
+
+    .platform-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.6rem;
+    }
+
+    .platform-card p { font-size: 0.82rem; line-height: 1.7; color: var(--tan); }
+
+    .causes {
+      background: var(--sand);
+      padding: 6rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .causes-text .section-heading { margin-top: 1rem; margin-bottom: 1.5rem; }
+    .causes-text p { font-size: 0.97rem; line-height: 1.9; color: var(--muted); }
+
+    .causes-cards { display: flex; flex-direction: column; gap: 1rem; }
+
+    .cause-card {
+      background: var(--warm-white);
+      border-radius: 1.2rem;
+      padding: 1.5rem 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      border: 1px solid rgba(200,173,143,0.4);
+    }
+
+    .cause-icon { font-size: 1.8rem; }
+
+    .cause-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--dark);
+      margin-bottom: 0.2rem;
+    }
+
+    .cause-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    .contact { padding: 8rem 4rem; text-align: center; background: var(--warm-white); }
+    .contact .section-eyebrow { justify-content: center; }
+
+    .contact-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 300;
+      color: var(--dark);
+      line-height: 1.1;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .contact-heading em { font-style: italic; color: var(--brown); }
+
+    .contact > p {
+      color: var(--muted);
+      font-size: 0.97rem;
+      max-width: 440px;
+      margin: 0 auto 3rem;
+      line-height: 1.8;
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.8rem;
+      border: 1px solid var(--tan);
+      border-radius: 3rem;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      transition: all 0.3s;
+    }
+
+    .contact-btn:hover { background: var(--dark); color: var(--cream); border-color: var(--dark); transform: translateY(-2px); }
+
+    footer {
+      background: var(--dark);
+      color: var(--tan);
+      text-align: center;
+      padding: 2rem 4rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer a { color: var(--tan); text-decoration: none; }
+    footer a:hover { color: var(--cream); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.8rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 7rem 1.8rem 4rem; gap: 3rem; }
+      .hero-visual { order: -1; }
+      .photo-wrap { width: 100%; max-width: 320px; margin: 0 auto; }
+      .float-card { left: 0; bottom: -1.5rem; }
+      .about { grid-template-columns: 1fr; padding: 5rem 1.8rem; gap: 2.5rem; }
+      .about-left { position: static; }
+      .section-heading { font-size: 2.4rem; }
+      .work { padding: 5rem 1.8rem; }
+      .work-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .work-grid { grid-template-columns: 1fr; }
+      .platforms { padding: 5rem 1.8rem; }
+      .platforms-top { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .platforms-grid { grid-template-columns: 1fr 1fr; }
+      .causes { grid-template-columns: 1fr; padding: 5rem 1.8rem; gap: 3rem; }
+      .contact { padding: 5rem 1.8rem; }
+      footer { flex-direction: column; gap: 0.5rem; padding: 1.8rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Malavika Deepak</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#platforms">Platforms</a></li>
+    <li><a href="#causes">Causes</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">Economics · Business Development · MBA Aspirant</span>
+    </div>
+    <h1 class="hero-name">
+      Malavika<br/>
+      <span class="italic">Deepak</span>
+    </h1>
+    <div class="hero-roles">
+      <span class="role-pill">Business Development</span>
+      <span class="role-pill">Content Creator</span>
+      <span class="role-pill">Product Builder</span>
+      <span class="role-pill">Social Worker</span>
+    </div>
+    <p class="hero-desc">
+      From economics to AI-driven business development — I build products,
+      write about growth, and document the real journey of someone turning
+      curiosity into a career.
+    </p>
+    <div class="hero-cta">
+      <a href="#work" class="btn-dark">See My Work</a>
+      <a href="mailto:malavikaddeepam@gmail.com" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="photo-wrap">
+      <!--
+        ══════════════════════════════════════════
+        REPLACE YOUR PHOTO:
+        1. Upload your photo to your GitHub repo
+        2. Name the file: photo.jpg
+        3. Change the src below to: photo.jpg
+        ══════════════════════════════════════════
+      -->
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Malavika Deepak" />
+      <div class="photo-frame"></div>
+      <div class="float-card">
+        <div class="float-card-label">Live Project</div>
+        <div class="float-card-value">BDE Workspace ⚡</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-left">
+    <p class="section-eyebrow">About Me</p>
+    <h2 class="section-heading">Where <em>economics</em><br/>meets ambition</h2>
+  </div>
+  <div class="about-body">
+    <p>
+      I come from a pure <strong>economics background</strong> — but my first job threw me straight
+      into the world of business development at an <strong>IT and AI company</strong>. That collision
+      of two worlds didn't confuse me — it ignited me. I discovered a deep love for tech while never
+      letting go of my passion for economics, personal development, and books.
+    </p>
+    <p>
+      Today I channel all of it: I build <strong>BDE Workspace</strong>, a live product designed
+      to help business development professionals prioritise their work and tasks. I share daily vlogs
+      and book reviews on Instagram. I write about growth, business, and everyday life on Medium.
+      And I show up on LinkedIn with real stories, lessons, and advice from the field.
+    </p>
+    <p>
+      My goal is to take everything I have built — hands-on experience, self-taught tech skills,
+      and a genuine obsession with growth — into a <strong>top MBA programme</strong> and come out
+      ready to lead, build, and give back.
+    </p>
+
+    <div class="achievements">
+      <div class="achievement-item">
+        <div class="achievement-icon">🏆</div>
+        <div class="achievement-text">
+          <strong>Best Outgoing Student</strong>
+          Recognised as the standout student of my college graduating class
+        </div>
+      </div>
+      <div class="achievement-item">
+        <div class="achievement-icon">💼</div>
+        <div class="achievement-text">
+          <strong>First Deal Closed</strong>
+          Closed a high-value deal in my very first business development role — proving that fresh eyes close big doors
+        </div>
+      </div>
+      <div class="achievement-item">
+        <div class="achievement-icon">💪</div>
+        <div class="achievement-text">
+          <strong>Fitness Challenge Winner</strong>
+          Won the company-wide fitness challenge — because discipline shows up in every area of life
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="work-top">
+    <div>
+      <p class="section-eyebrow">My Work</p>
+      <h2 class="section-heading">What I'm <em>building</em></h2>
+    </div>
+  </div>
+  <div class="work-grid">
+    <a href="https://bdeworkspace.lovable.app" target="_blank" class="work-card">
+      <div class="card-icon">⚡</div>
+      <span class="card-tag">Live Product</span>
+      <h3>BDE Workspace</h3>
+      <p>A live web application built for business development professionals to prioritise work and manage tasks. My proof that ideas ship.</p>
+      <span class="card-arrow">Visit App →</span>
+    </a>
+    <a href="https://medium.com/@contact.malavikadeepak" target="_blank" class="work-card">
+      <div class="card-icon">✍️</div>
+      <span class="card-tag">Writing & Blogging</span>
+      <h3>Medium Articles</h3>
+      <p>Long-form writing on personal growth, sales strategy, business insights, and daily life — from someone living it in real time.</p>
+      <span class="card-arrow">Read Articles →</span>
+    </a>
+    <a href="https://www.instagram.com/shelf_of_malavika/" target="_blank" class="work-card">
+      <div class="card-icon">🎬</div>
+      <span class="card-tag">Content Creation</span>
+      <h3>Daily Vlogs & Books</h3>
+      <p>Daily vlogs, book reviews, and the unfiltered lifestyle of someone building a brand, a product, and a career simultaneously.</p>
+      <span class="card-arrow">Watch on Instagram →</span>
+    </a>
+  </div>
+</section>
+
+<section class="platforms" id="platforms">
+  <div class="platforms-top">
+    <div>
+      <p class="section-eyebrow">Find Me On</p>
+      <h2 class="section-heading">Where I <em>show up</em></h2>
+    </div>
+  </div>
+  <div class="platforms-grid">
+    <a href="https://www.linkedin.com/in/contact-malavika-deepak/" target="_blank" class="platform-card">
+      <span class="platform-emoji">💼</span>
+      <h3>LinkedIn</h3>
+      <p>Professional stories, sales lessons, achievements, and advice for anyone building their career from scratch.</p>
+    </a>
+    <a href="https://www.instagram.com/shelf_of_malavika/" target="_blank" class="platform-card">
+      <span class="platform-emoji">📷</span>
+      <h3>Instagram</h3>
+      <p>Daily vlogs, book reviews, and the real, relatable lifestyle of a young professional chasing big goals.</p>
+    </a>
+    <a href="https://medium.com/@contact.malavikadeepak" target="_blank" class="platform-card">
+      <span class="platform-emoji">📝</span>
+      <h3>Medium</h3>
+      <p>Deep dives on business, personal growth, economics, and the things I learn by actually doing them.</p>
+    </a>
+    <a href="https://github.com/malavikaddeepak-builds" target="_blank" class="platform-card">
+      <span class="platform-emoji">💻</span>
+      <h3>GitHub</h3>
+      <p>The technical side — open code, live projects, and everything I build in public.</p>
+    </a>
+  </div>
+</section>
+
+<section class="causes" id="causes">
+  <div class="causes-text">
+    <p class="section-eyebrow">Beyond Work</p>
+    <h2 class="section-heading">What I <em>stand for</em></h2>
+    <p>
+      Work is only part of who I am. I believe the most meaningful careers are built
+      alongside a commitment to something larger than yourself. Social impact is not
+      an afterthought for me — it is woven into everything I do.
+    </p>
+  </div>
+  <div class="causes-cards">
+    <div class="cause-card">
+      <span class="cause-icon">👩‍💼</span>
+      <div>
+        <h4>Women Empowerment</h4>
+        <p>Actively working to create opportunities and amplify voices for women in professional spaces.</p>
+      </div>
+    </div>
+    <div class="cause-card">
+      <span class="cause-icon">🌱</span>
+      <div>
+        <h4>Youth Empowerment</h4>
+        <p>Helping young people find their direction, build confidence, and take their first bold steps forward.</p>
+      </div>
+    </div>
+    <div class="cause-card">
+      <span class="cause-icon">📚</span>
+      <div>
+        <h4>Learning & Literacy</h4>
+        <p>A lifelong reader and writer who believes access to knowledge changes everything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <p class="section-eyebrow">Get In Touch</p>
+  <h2 class="contact-heading">Let's <em>connect</em><br/>& grow together</h2>
+  <p>Whether you want to collaborate, discuss business, talk books, or just say hello — I would love to hear from you.</p>
+  <div class="contact-grid">
+    <a href="mailto:malavikaddeepam@gmail.com" class="contact-btn">✉️ Email Me</a>
+    <a href="https://www.linkedin.com/in/contact-malavika-deepak/" target="_blank" class="contact-btn">💼 LinkedIn</a>
+    <a href="https://www.instagram.com/shelf_of_malavika/" target="_blank" class="contact-btn">📷 Instagram</a>
+    <a href="https://medium.com/@contact.malavikadeepak" target="_blank" class="contact-btn">📝 Medium</a>
+    <a href="https://github.com/malavikaddeepak-builds" target="_blank" class="contact-btn">💻 GitHub</a>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Malavika Deepak</span>
+  <span>Economics · Business · Growth</span>
+  <a href="https://bdeworkspace.lovable.app" target="_blank">BDE Workspace ⚡</a>
+</footer>
+
+</body>
+</html>
